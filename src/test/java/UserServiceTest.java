@@ -14,6 +14,7 @@ public class UserServiceTest {
     private final byte testAge = 5;
 
 
+
     @Test
     public void dropUsersTable() {
         try {
@@ -62,6 +63,8 @@ public class UserServiceTest {
             userService.createUsersTable();
             userService.saveUser(testName, testLastName, testAge);
             userService.removeUserById(1L);
+            // update
+            userService.getAllUsers();
         } catch (Exception e) {
             Assert.fail("При тестировании удаления пользователя по id произошло исключение\n" + e);
         }
